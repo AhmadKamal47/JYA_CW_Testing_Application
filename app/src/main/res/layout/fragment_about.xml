@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".fragment.AboutFragment">
+    tools:context=".mvvm.view.fragment.AboutFragment">
 
     <TextView
         android:id="@+id/name_tv"

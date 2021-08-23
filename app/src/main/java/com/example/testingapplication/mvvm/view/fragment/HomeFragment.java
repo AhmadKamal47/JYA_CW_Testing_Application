@@ -1,4 +1,4 @@
-package com.example.testingapplication.fragment;
+package com.example.testingapplication.mvvm.view.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -7,19 +7,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
-import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.testingapplication.Profile;
 import com.example.testingapplication.R;
 import com.example.testingapplication.databinding.FragmentHomeBinding;
-import com.example.testingapplication.utils.Constants;
 
 public class HomeFragment extends Fragment {
     private FragmentHomeBinding mBinding;
@@ -55,11 +51,17 @@ public class HomeFragment extends Fragment {
 
         mNavController = Navigation.findNavController(view);
         mBinding.toAbout.setOnClickListener(view1 -> {
+            mNavController.navigate(R.id.aboutFragment);
+            /*
             String name = mBinding.nameEt.getText().toString().trim();
             String email = mBinding.emailEt.getText().toString().trim();
-            int age = Integer.parseInt(mBinding.ageEt.getText().toString().trim());
+            String ageStr = mBinding.ageEt.getText().toString().trim();
 
-            if(TextUtils.isEmpty(name)){
+            int age = 0;
+            if(!TextUtils.isEmpty(ageStr))
+                age = Integer.parseInt(ageStr);
+
+                if(TextUtils.isEmpty(name)){
                 mBinding.nameEt.setError("Name required!");
                 return;
             }
@@ -70,14 +72,15 @@ public class HomeFragment extends Fragment {
             }
 
             // Pass Name to About Fragment - 1st Method
-            /*Bundle bundle = new Bundle();
+            *//*Bundle bundle = new Bundle();
             bundle.putSerializable(Constants.KEY_MY_PROFILE, new Profile(name, email, age));
-            mNavController.navigate(R.id.action_homeFragment_to_aboutFragment, bundle);*/
+            mNavController.navigate(R.id.action_homeFragment_to_aboutFragment, bundle);*//*
 
             // Pass Name to About Fragment - 2nd Method
-            HomeFragmentDirections.ActionHomeFragmentToAboutFragment gotoAboutFragment = HomeFragmentDirections.actionHomeFragmentToAboutFragment(new Profile(name, email, age), name);
-            mNavController.navigate(gotoAboutFragment);
+//            HomeFragmentDirections.ActionHomeFragmentToAboutFragment gotoAboutFragment = HomeFragmentDirections.actionHomeFragmentToAboutFragment(new Profile(name, email, age), name);
+//            mNavController.navigate(gotoAboutFragment);*/
         });
+
     }
 
     @Override

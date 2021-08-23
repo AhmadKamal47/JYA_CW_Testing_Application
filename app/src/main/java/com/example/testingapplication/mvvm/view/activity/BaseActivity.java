@@ -1,4 +1,4 @@
-package com.example.testingapplication.activity;
+package com.example.testingapplication.mvvm.view.activity;
 
 import android.os.Bundle;
 import android.view.View;

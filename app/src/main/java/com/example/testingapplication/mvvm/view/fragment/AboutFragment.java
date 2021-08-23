@@ -1,4 +1,4 @@
-package com.example.testingapplication.fragment;
+package com.example.testingapplication.mvvm.view.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -11,9 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.testingapplication.Profile;
+import com.example.testingapplication.mvvm.repository.models.Profile;
 import com.example.testingapplication.databinding.FragmentAboutBinding;
-import com.example.testingapplication.utils.Constants;
 
 public class AboutFragment extends Fragment {
 
@@ -21,18 +20,6 @@ public class AboutFragment extends Fragment {
     private static final String TAG = "AboutFragment";
 
     public AboutFragment() {
-    }
-
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-        Log.d(TAG, "onAttached: ");
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Log.d(TAG, "onCreated: ");
     }
 
     @Override
@@ -55,14 +42,26 @@ public class AboutFragment extends Fragment {
                 populate(profile);
         }*/
 
-        Profile profile = AboutFragmentArgs.fromBundle(getArguments()).getMyProfile();
-        populate(profile);
+//        Profile profile = AboutFragmentArgs.fromBundle(getArguments()).getMyProfile();
+//        populate(profile);
     }
 
     private void populate(Profile profile) {
         mBinding.nameTv.setText(profile.getName());
         mBinding.emailTv.setText(profile.getEmail());
         mBinding.ageTv.setText(String.valueOf(profile.getAge()));
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        Log.d(TAG, "onAttached: ");
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Log.d(TAG, "onCreated: ");
     }
 
     @Override

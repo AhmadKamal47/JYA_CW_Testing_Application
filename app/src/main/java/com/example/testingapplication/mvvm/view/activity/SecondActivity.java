@@ -1,11 +1,8 @@
-package com.example.testingapplication.activity;
+package com.example.testingapplication.mvvm.view.activity;
 
-import android.content.Intent;
 import android.view.View;
-import android.widget.Toast;
 
 import com.example.testingapplication.databinding.ActivitySecondBinding;
-import com.example.testingapplication.databinding.FormLayoutBinding;
 import com.google.android.material.snackbar.Snackbar;
 
 public class SecondActivity extends BaseActivity<ActivitySecondBinding> {

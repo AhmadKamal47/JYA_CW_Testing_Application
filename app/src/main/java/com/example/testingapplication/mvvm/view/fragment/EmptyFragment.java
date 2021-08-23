@@ -1,4 +1,4 @@
-package com.example.testingapplication.fragment;
+package com.example.testingapplication.mvvm.view.fragment;
 
 import android.os.Bundle;
 

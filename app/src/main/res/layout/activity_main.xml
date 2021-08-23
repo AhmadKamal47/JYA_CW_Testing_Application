@@ -6,15 +6,32 @@
     style="@style/Match_Width_Height"
     android:orientation="vertical"
     android:padding="16dp"
-    android:id="@+id/layout"
-    tools:context=".activity.MainActivity">
+    tools:context=".mvvm.view.activity.MainActivity">
+
+    <EditText
+        android:id="@+id/name_et"
+        style="@style/EditText_Normal_Match_Wrap_Style"
+        android:hint="@string/name"/>
 
     <Button
+        android:id="@+id/hello_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/say_hello"/>
+
+    <TextView
+        android:id="@+id/greetings_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <!--<Button
         android:id="@+id/toAbout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:visibility="gone"
-        android:text="@string/switch_to_about"/>
+        android:text="@string/switch_to_about"/>-->
+<!--
 
     <fragment
         android:id="@+id/fragmentContainerView"
@@ -23,5 +40,14 @@
         android:layout_height="match_parent"
         app:defaultNavHost="true"
         app:navGraph="@navigation/home_nav_graph" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:menu="@menu/main_bottom_menu"
+        app:labelVisibilityMode="labeled"
+        android:layout_gravity="bottom"/>
+-->
 
 </LinearLayout>

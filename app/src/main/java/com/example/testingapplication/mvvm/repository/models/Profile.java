@@ -1,4 +1,4 @@
-package com.example.testingapplication;
+package com.example.testingapplication.mvvm.repository.models;
 
 import java.io.Serializable;
 

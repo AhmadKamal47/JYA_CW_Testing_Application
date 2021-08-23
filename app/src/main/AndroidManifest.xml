@@ -8,15 +8,16 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name=".App"
         android:theme="@style/Theme.TestingApplication">
         <activity
-            android:name=".activity.SettingsActivity"
+            android:name=".mvvm.view.activity.SettingsActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.SecondActivity"
+            android:name=".mvvm.view.activity.SecondActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".mvvm.view.activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

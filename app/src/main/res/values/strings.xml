@@ -18,4 +18,5 @@
     <string name="register">Register</string>
     <string name="age">Age</string>
     <string name="empty_fragment">Empty Fragment</string>
+    <string name="say_hello">Say Hello</string>
 </resources>
