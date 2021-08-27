@@ -13,41 +13,29 @@
         style="@style/EditText_Normal_Match_Wrap_Style"
         android:hint="@string/name"/>
 
+    <EditText
+        android:id="@+id/address_et"
+        style="@style/EditText_Normal_Match_Wrap_Style"
+        android:hint="@string/address"/>
+
     <Button
-        android:id="@+id/hello_btn"
+        android:id="@+id/add_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/say_hello"/>
+        android:text="@string/add"/>
 
     <TextView
-        android:id="@+id/greetings_tv"
+        android:id="@+id/total_users_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        />
+        android:text="@string/total_users"/>
 
-    <!--<Button
-        android:id="@+id/toAbout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:text="@string/switch_to_about"/>-->
-<!--
-
-    <fragment
-        android:id="@+id/fragmentContainerView"
-        android:name="androidx.navigation.fragment.NavHostFragment"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/users_rv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:defaultNavHost="true"
-        app:navGraph="@navigation/home_nav_graph" />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_nav_view"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        app:menu="@menu/main_bottom_menu"
-        app:labelVisibilityMode="labeled"
-        android:layout_gravity="bottom"/>
--->
+        android:orientation="vertical"
+        tools:listitem="@layout/item_user"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
 </LinearLayout>

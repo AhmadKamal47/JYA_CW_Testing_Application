@@ -19,4 +19,8 @@
     <string name="age">Age</string>
     <string name="empty_fragment">Empty Fragment</string>
     <string name="say_hello">Say Hello</string>
+    <string name="address">Address</string>
+    <string name="add">Add</string>
+    <string name="total_users">Total Users: </string>
+    <string name="zero">0</string>
 </resources>
