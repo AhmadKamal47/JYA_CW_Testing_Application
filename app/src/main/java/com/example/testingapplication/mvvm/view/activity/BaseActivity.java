@@ -1,6 +1,7 @@
 package com.example.testingapplication.mvvm.view.activity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.Nullable;

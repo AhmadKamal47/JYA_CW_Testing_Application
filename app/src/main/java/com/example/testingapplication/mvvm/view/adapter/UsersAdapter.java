@@ -10,24 +10,24 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.testingapplication.callbacks.IItemActionClick;
 import com.example.testingapplication.databinding.ItemUserBinding;
-import com.example.testingapplication.mvvm.repository.db.roomdb.entity.User;
+import com.example.testingapplication.mvvm.repository.db.roomdb.entity.relations.onetomany.UserWithAddresses;
 
 import java.util.List;
 
 public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.MyViewHolder> {
 
     private final Context context;
-    private List<User> userList;
+    private List<UserWithAddresses> itemList;
     private ItemUserBinding binding;
 
-    private final IItemActionClick listener;
+    private final IItemActionClick<UserWithAddresses> listener;
 
-    public void setUserList(List<User> userList) {
-        this.userList = userList;
+    public void setList(List<UserWithAddresses> itemList) {
+        this.itemList = itemList;
         this.notifyDataSetChanged();
     }
 
-    public UsersAdapter(Context context, IItemActionClick listener) {
+    public UsersAdapter(Context context, IItemActionClick<UserWithAddresses> listener) {
         this.context = context;
         this.listener = listener;
     }
@@ -41,21 +41,28 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.MyViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        User user = userList.get(position);
+        UserWithAddresses item = itemList.get(position);
 
-        binding.idTv.setText(String.valueOf(user.getId()));
-        binding.nameTv.setText(user.getName());
-        binding.addressTv.setText(user.getAddress());
+        binding.idTv.setText(String.valueOf(item.getUser().getId()));
+        binding.nameTv.setText(item.getUser().getName());
+        //binding.addressTv.setText(item.getAddressList().get(0).getCity());
+        binding.cnic.setText("CNIC");
+
+        /*if (user.getCnic() != null){
+            binding.cnic.setText(user.getCnic().getCnicNo());
+        }
+        else
+            binding.cnic.setText("No CNIC");*/
 
         binding.deleteIv.setOnClickListener(view -> {
             if(listener != null)
-                listener.onItemDeleted(user, position);
+                listener.onItemDeleted(item, position);
         });
     }
 
     @Override
     public int getItemCount() {
-        return userList.size();
+        return itemList.size();
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {

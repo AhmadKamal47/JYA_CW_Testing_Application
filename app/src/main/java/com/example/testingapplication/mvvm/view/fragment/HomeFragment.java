@@ -17,39 +17,24 @@ import android.view.ViewGroup;
 import com.example.testingapplication.R;
 import com.example.testingapplication.databinding.FragmentHomeBinding;
 
-public class HomeFragment extends Fragment {
-    private FragmentHomeBinding mBinding;
+public class HomeFragment extends BaseFragment<FragmentHomeBinding> {
     private static final String TAG = "HomeFragment";
 
-    private NavController mNavController;
-
-    public HomeFragment() {}
 
     @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-        Log.d(TAG, "onAttached: ");
+    protected FragmentHomeBinding initBindingRef(LayoutInflater inflater, ViewGroup container, Boolean attatchToParent) {
+        return FragmentHomeBinding.inflate(inflater, container, attatchToParent);
     }
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Log.d(TAG, "onCreated: ");
-    }
-
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        Log.d(TAG, "onCreateView: ");
-        mBinding = FragmentHomeBinding.inflate(inflater, container, false);
+    protected View initRoot() {
         return mBinding.getRoot();
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        Log.d(TAG, "onViewCreated: ");
-        super.onViewCreated(view, savedInstanceState);
+    protected void initRef() {
+        initNavGraph();
 
-        mNavController = Navigation.findNavController(view);
         mBinding.toAbout.setOnClickListener(view1 -> {
             mNavController.navigate(R.id.aboutFragment);
             /*
@@ -80,6 +65,10 @@ public class HomeFragment extends Fragment {
 //            HomeFragmentDirections.ActionHomeFragmentToAboutFragment gotoAboutFragment = HomeFragmentDirections.actionHomeFragmentToAboutFragment(new Profile(name, email, age), name);
 //            mNavController.navigate(gotoAboutFragment);*/
         });
+    }
+
+    protected void clicks()
+    {
 
     }
 

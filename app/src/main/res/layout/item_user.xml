@@ -39,6 +39,16 @@
         android:text="@string/address"
         android:textSize="12sp"
         android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/cnic"
+        app:layout_constraintTop_toBottomOf="@id/cnic"/>
+
+    <TextView
+        android:id="@+id/cnic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cnic"
+        android:textSize="12sp"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@id/name_tv"
         app:layout_constraintTop_toBottomOf="@id/name_tv"/>
 

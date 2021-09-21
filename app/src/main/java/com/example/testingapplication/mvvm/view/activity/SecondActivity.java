@@ -2,7 +2,10 @@ package com.example.testingapplication.mvvm.view.activity;
 
 import android.view.View;
 
+import androidx.fragment.app.FragmentManager;
+
 import com.example.testingapplication.databinding.ActivitySecondBinding;
+import com.example.testingapplication.mvvm.view.fragment.EmptyFragment;
 import com.google.android.material.snackbar.Snackbar;
 
 public class SecondActivity extends BaseActivity<ActivitySecondBinding> {
@@ -27,6 +30,12 @@ public class SecondActivity extends BaseActivity<ActivitySecondBinding> {
     protected void clicks() {
         mBinding.formLayoutInc.registerBtn.setOnClickListener(view -> {
             String name = mBinding.formLayoutInc.nameEt.getText().toString().trim();
+
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .setReorderingAllowed(true)
+                    .add(mBinding.tempFragmentContainer.getId(), new EmptyFragment())
+                    .commit();
             Snackbar.make(mBinding.getRoot(), "Welcome! "+name, Snackbar.LENGTH_SHORT).show();
         });
     }

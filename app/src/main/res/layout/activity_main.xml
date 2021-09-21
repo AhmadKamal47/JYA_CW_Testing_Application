@@ -18,11 +18,23 @@
         style="@style/EditText_Normal_Match_Wrap_Style"
         android:hint="@string/address"/>
 
+    <EditText
+        android:id="@+id/cnic_et"
+        style="@style/EditText_Normal_Match_Wrap_Style"
+        android:hint="@string/cnic"
+        android:inputType="number"/>
+
     <Button
         android:id="@+id/add_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/add"/>
+
+    <Button
+        android:id="@+id/temp_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/temp"/>
 
     <TextView
         android:id="@+id/total_users_tv"

@@ -10,6 +10,15 @@
     <include layout="@layout/form_layout"
         android:id="@+id/form_layout_inc"/>
 
+    <FrameLayout
+        android:id="@+id/temp_fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    </FrameLayout>
+
+
 <!--
     <EditText
         android:id="@+id/name_et"

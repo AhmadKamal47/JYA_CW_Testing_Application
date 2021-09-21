@@ -11,22 +11,25 @@
     <EditText
         android:id="@+id/name_et"
         style="@style/EditText_Normal_Match_Wrap_Style"
+        android:layout_gravity="center"
         android:hint="@string/name"
-        android:layout_gravity="center"/>
+        android:minHeight="48dp" />
 
     <EditText
         android:id="@+id/email_et"
         style="@style/EditText_Normal_Match_Wrap_Style"
-        android:inputType="textEmailAddress"
+        android:layout_gravity="center"
         android:hint="@string/email"
-        android:layout_gravity="center"/>
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp" />
 
     <EditText
         android:id="@+id/age_et"
         style="@style/EditText_Normal_Match_Wrap_Style"
-        android:inputType="number"
+        android:layout_gravity="center"
         android:hint="@string/age"
-        android:layout_gravity="center"/>
+        android:inputType="number"
+        android:minHeight="48dp" />
 
     <Button
         android:id="@+id/toAbout"

@@ -9,17 +9,29 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.testingapplication.R;
+import com.example.testingapplication.databinding.FragmentEmptyBinding;
+import com.example.testingapplication.databinding.FragmentHomeBinding;
 
-public class EmptyFragment extends Fragment {
+public class EmptyFragment extends BaseFragment<FragmentEmptyBinding> {
 
-    public EmptyFragment() {
-        // Required empty public constructor
+
+    @Override
+    protected FragmentEmptyBinding initBindingRef(LayoutInflater inflater, ViewGroup container, Boolean attatchToParent) {
+        return FragmentEmptyBinding.inflate(inflater, container, attatchToParent);
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_empty, container, false);
-        container.addView(view);
-        return view;
+    protected View initRoot() {
+        return mBinding.getRoot();
+    }
+
+    @Override
+    protected void initRef() {
+
+    }
+
+    @Override
+    protected void clicks() {
+
     }
 }

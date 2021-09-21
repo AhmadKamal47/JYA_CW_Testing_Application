@@ -23,4 +23,7 @@
     <string name="add">Add</string>
     <string name="total_users">Total Users: </string>
     <string name="zero">0</string>
+    <string name="cnic">CNIC</string>
+    <string name="loading">Loading… Please wait</string>
+    <string name="temp">Temp</string>
 </resources>
